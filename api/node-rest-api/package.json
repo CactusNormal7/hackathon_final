@@ -1,0 +1,25 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "an application that will run a game for two (or more) players to play song and musical games. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SajedehAdelia/Hackathon-Api.git"
+  },
+  "keywords": [
+    "hackathon"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SajedehAdelia/Hackathon-Api/issues"
+  },
+  "homepage": "https://github.com/SajedehAdelia/Hackathon-Api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
