@@ -8,6 +8,7 @@ dotenv.config();
 
 const corsOptions = {
     origin: 'http://localhost:3000',
+    methods : ["get", "POST"],
     optionsSuccessStatus: 200
 };
 
