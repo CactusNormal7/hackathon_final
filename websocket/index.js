@@ -13,7 +13,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin: ["https://hackathon-final-git-main-cactusnormal7.vercel.app", "http://localhost:3000"],
+        origin: ["https://hackathon-final-git-main-cactusnormal7.vercel.app", "http://localhost:3000" , "https://hackathon-api-fiq7.onrender.com"],
         methods: ["GET", "POST"]
     }
 })

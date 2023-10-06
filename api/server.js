@@ -7,7 +7,7 @@ const cors = require('cors');
 dotenv.config();
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', "https://hacathon-final.onrender.com"],
     methods : ["get", "POST"],
     optionsSuccessStatus: 200
 };
