@@ -15,7 +15,7 @@ import Chatmsg from '../chatMessage/chatmsg'
 
 // const socketio = io.connect('http://localhost:3001');
 // const socketio  = io.connect('https://testsocket-4vkm.onrender.com');
-const socketio  = io.connect('https://socket-final-ulsl.onrender.com');
+const socketio  = io.connect('https://hacathon-final.onrender.com');
 
 
 const Lobby = () => {
