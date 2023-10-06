@@ -13,7 +13,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin: ["https://hackathon-test-iota.vercel.app", "http://localhost:3000"],
+        origin: ["https://hackathon-final-rouge.vercel.app", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 })
