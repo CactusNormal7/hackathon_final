@@ -8,8 +8,7 @@ dotenv.config();
 
 const corsOptions = {
     origin: ['http://localhost:3000', "https://hacathon-final.onrender.com"],
-    methods : ["get", "POST"],
-    optionsSuccessStatus: 200
+    methods : ["GET", "POST"]
 };
 
 const mongoString = "mongodb+srv://adeliafathipour:LDSXERJHylcEwlmp@cluster0.oevbmuu.mongodb.net/;"
