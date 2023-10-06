@@ -1,0 +1,135 @@
+/* Home.css */
+
+.home-background {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #007bff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    /* Ajustez la largeur maximale selon vos besoins */
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .input-container {
+    margin: 10px 0;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .launch {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .launch:hover {
+    background-color: #0056b3;
+  }
+  
+  .logo {
+    transition: transform 1s;
+    padding: 5%;
+  }
+  
+  .logo:hover {
+    transform: rotate(360deg);
+    transition: transform 1s;
+  }
+  
+  .music-controls {
+    height: 100px;
+    width: auto;
+    // padding: 0px 20px 0 20px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+  
+  .music-controls button {
+    background: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  
+  /* CSS pour le curseur de volume */
+  .music-controls input[type="range"] {
+    width: 150px;
+    height: 5px;
+    -webkit-appearance: none;
+    background-color: #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 10px;
+  }
+  
+  .music-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .music-controls input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #0056b3;
+  }
+  
+  .pause {
+    height: 50px
+  }
+  
+  .play {
+    height: 50px
+  }
+  
+  .mute {
+    height: 50px
+  }
+  
+  .volumeup {
+    height: 50px;
+  }

@@ -1,0 +1,27 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  #wrappercard {
+    font-family: 'Roboto', sans-serif;
+    width: 15vw;
+    font-weight: bolder;
+    border-radius: 10px;
+    display: flex;
+    height: 50px;
+    flex-direction: column;
+    background-color: gray;
+
+  }
+
+  .username {
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .message {
+    padding: 0px 0px 0px 10px;
+  }
