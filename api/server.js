@@ -11,6 +11,10 @@ const corsOptions = {
     methods : ["GET", "POST"]
 };
 
+app.use(cors(corsOptions));
+app.use(express.json())
+app.use('/api', routes)
+
 const mongoString = "mongodb+srv://adeliafathipour:LDSXERJHylcEwlmp@cluster0.oevbmuu.mongodb.net/;"
 mongoose.connect(mongoString, { useNewUrlParser: true, useUnifiedTopology: true }); // Add options
 const database = mongoose.connection;
@@ -23,9 +27,7 @@ database.once('open', () => {
     console.log('Database connected');
 });
 
-app.use(cors(corsOptions));
-app.use(express.json())
-app.use('/api', routes)
+
 
 const port = process.env.PORT || 3002;
 

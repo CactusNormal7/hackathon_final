@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
 
     socket.on("on_start", async () => {
         const user = getCurrentUser(socket.id)
-        const da = await fetch('https://hackathon-api-fiq7.onrender.com/api/getAll')
+        const da = await fetch('https://hackathon-api-fiq7.onrender.com/api/getall')
         const songs = await da.json()
         let rdnb = generateUniqueRandomNumbers(5, 1, 30)
         let songs_to_send = []
