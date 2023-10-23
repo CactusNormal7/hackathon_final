@@ -49,15 +49,12 @@ const Lobby = () => {
     const username = searchParams.get('username')
     let score = 0
     let alsco = []
+    let allu = {}
 
     const resetUserColors = () => {
-        allUsers.forEach(user => {
-            const userElement = document.querySelector(`.${user.username}`);
-            console.log("User element for", user.username, userElement);
-            if (userElement) {
-                userElement.style.backgroundColor = "gray";
-            }
-        });
+        allu.forEach((elem) => {
+            document.querySelector(`.${elem.username}`).style.backgroundColor = "gray";
+        })
     }
 
     const onStart = () => {
@@ -77,12 +74,13 @@ const Lobby = () => {
         let playersAnswered = [];
 
         const nextIteration = () => {
-            
+            document.querySelector(`.${username}`).style.backgroundColor = "gray";
             const highestScore = Math.max(...alsco.map(user => user.score));
             const startVideo= randomNumber();
             
             // answereed = false
-
+            
+            resetUserColors();
             if (highestScore >= maxPoints) {
                 console.log("Game Over!");
                 setGameOver(true);
@@ -100,7 +98,6 @@ const Lobby = () => {
                 clearInterval(timerInterval);
             
                 // Redémarre le chronomètre pour la prochaine chanson
-                console.log("Setting initial time:", songDuration);
                 setTimeLeft(songDuration); // Réinitialisez timeLeft à la durée totale de la chanson
                 timerInterval = setInterval(() => {
                     setTimeLeft(prevTime => {
@@ -112,7 +109,6 @@ const Lobby = () => {
                     });
                 }, 1000);
             
-                document.querySelector(`.${username}`).style.backgroundColor = "gray";
                 let url = ((data[i].track).split('?')[1]).split("&");
                 let videoId = null;
                 url.forEach(parametre => {
@@ -126,7 +122,7 @@ const Lobby = () => {
                 i++;
                 setI(i);
                 setTimeout(nextIteration, songDuration * 1000);
-                resetUserColors();
+                console.log(allUsers);
                 playersAnswered = [];
             } else {
                 clearInterval(timerInterval);
@@ -135,6 +131,7 @@ const Lobby = () => {
             
         }
         socketio.on('answer_message_received', (values) => {
+            console.log(data[i - 1].title);
             if (!playersAnswered.includes(values.username)) {
                 if (values.message === data[i - 1].title) {
                     console.log("true");
@@ -187,6 +184,7 @@ const Lobby = () => {
             setAllScore(newTab)
             alsco = newTab
             setAllUsers(data.users)
+            allu = data.users
         })
 
         socketio.on('settings_updated', (data) => {
