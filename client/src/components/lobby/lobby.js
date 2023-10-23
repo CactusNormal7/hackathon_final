@@ -7,13 +7,6 @@ import Settings from '../../Settings/Settings';
 
 
 //feat quentin le ↓
-//         __                            
-//  ____ |__| ____   ____   _____  ____ 
-// /    \|  |/ ___\ / ___\_/ __ \_  __ \
-// |   |  \  / /_/  > /_/  >  ___/|  | \/
-// |___|  /__\___  /\___  / \___  >__|   
-//     \/  /_____//_____/       \/      
-
 
 const socketio = io.connect('http://localhost:3001');
 // const socketio  = io.connect('https://testsocket-4vkm.onrender.com');
