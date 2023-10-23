@@ -6,14 +6,6 @@ import Chatmsg from '../chatMessage/chatmsg'
 import Settings from '../../Settings/Settings';
 
 
-//feat quentin le ↓
-//         __                            
-//  ____ |__| ____   ____   _____  ____ 
-// /    \|  |/ ___\ / ___\_/ __ \_  __ \
-// |   |  \  / /_/  > /_/  >  ___/|  | \/
-// |___|  /__\___  /\___  / \___  >__|   
-//     \/  /_____//_____/       \/      
-
 
 const socketio = io.connect('http://localhost:3001');
 // const socketio  = io.connect('https://testsocket-4vkm.onrender.com');
@@ -60,29 +52,21 @@ const Lobby = () => {
 
     const resetUserColors = () => {
         allUsers.forEach(user => {
-            document.querySelector(`.${user.username}`).style.backgroundColor = "gray";
+            const userElement = document.querySelector(`.${user.username}`);
+            console.log("User element for", user.username, userElement);
+            if (userElement) {
+                userElement.style.backgroundColor = "gray";
+            }
         });
     }
 
     const onStart = () => {
-        socketio.emit("on_start")
+        socketio.emit("on_start") 
     }
 
     function randomNumber() {
         return Math.floor(Math.random() * 61); 
     }
-
-    const gameLoopQCM = (data) => {
-        if (currentQcmIndex < data.length) {
-            setQcmQuestion(data[currentQcmIndex].intitule);
-            setQcmChoices(data[currentQcmIndex].choix);
-            setQcmAnswer(data[currentQcmIndex].reponse);
-        } else {
-            console.log("QCM terminé !");
-            // Vous pouvez ajouter une logique pour gérer la fin du QCM ici
-        }
-    }
-
 
     const gameLoop = (data) => {
         setSongsToGuess(data)
@@ -91,10 +75,12 @@ const Lobby = () => {
         let timerInterval;
         // let answereed = false
         let playersAnswered = [];
+
         const nextIteration = () => {
-            resetUserColors();
+            
             const highestScore = Math.max(...alsco.map(user => user.score));
             const startVideo= randomNumber();
+            
             // answereed = false
 
             if (highestScore >= maxPoints) {
@@ -140,6 +126,8 @@ const Lobby = () => {
                 i++;
                 setI(i);
                 setTimeout(nextIteration, songDuration * 1000);
+                resetUserColors();
+                playersAnswered = [];
             } else {
                 clearInterval(timerInterval);
             }
@@ -210,12 +198,7 @@ const Lobby = () => {
 
         socketio.on('game_started', (data) => {
             setIsGameStarted(true);
-            
-            if (gameMode === "qcm") {
-                gameLoopQCM(data);
-            } else if (gameMode == "mp3") {
-                gameLoop(data);
-            }
+            gameLoop(data);
         });
 
         socketio.on('send_score', (d) => {

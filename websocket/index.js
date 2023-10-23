@@ -68,10 +68,16 @@ io.on("connection", (socket) => {
     
 
     socket.on('chat_message', (data) => {
-        const user = getCurrentUser(socket.id)
-
-        io.to(user.room).emit('chat_message_received', { user: usear.username, message: data.message })
-    })
+        const user = getCurrentUser(socket.id);
+    
+        if (!user) {
+            console.error('User not found for socket ID:', socket.id);
+            return;
+        }
+    
+        io.to(user.room).emit('chat_message_received', { user: user.username, message: data.message });
+    });
+    
 
     socket.on("good_answer", (d) => {
         const user = getCurrentUser(socket.id)
