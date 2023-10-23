@@ -1,4 +1,4 @@
-##pour lancer le projet
+pour lancer le projet
 
 dans le dossier /client : 
   npm start
