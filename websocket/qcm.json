@@ -1,0 +1,155 @@
+{
+    "questions": [
+      {
+        "intitule": "Qui est surnommé 'Le Roi de la Pop'?",
+        "choix": ["Elvis Presley", "Michael Jackson", "Prince", "Freddie Mercury"],
+        "reponse": "Michael Jackson"
+      },
+      {
+        "intitule": "Quel groupe a enregistré l'album 'Dark Side of the Moon'?",
+        "choix": ["Pink Floyd", "The Beatles", "Led Zeppelin", "The Rolling Stones"],
+        "reponse": "Pink Floyd"
+      },
+      {
+        "intitule": "Quel instrument est associé à Miles Davis?",
+        "choix": ["Saxophone", "Piano", "Trompette", "Batterie"],
+        "reponse": "Trompette"
+      },
+      {
+        "intitule": "Quelle chanteuse est connue pour ses tenues extravagantes et ses hits comme 'Bad Romance'?",
+        "choix": ["Madonna", "Katy Perry", "Lady Gaga", "Rihanna"],
+        "reponse": "Lady Gaga"
+      },
+      {
+        "intitule": "Dans quelle ville se trouve le célèbre 'Sun Studio'?",
+        "choix": ["Nashville", "Los Angeles", "New York", "Memphis"],
+        "reponse": "Memphis"
+      },
+      {
+        "intitule": "Quel groupe est associé à la chanson 'Hotel California'?",
+        "choix": ["Eagles", "Aerosmith", "Queen", "Fleetwood Mac"],
+        "reponse": "Eagles"
+      },
+      {
+        "intitule": "Qui a composé les Quatre Saisons?",
+        "choix": ["Ludwig van Beethoven", "Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Antonio Vivaldi"],
+        "reponse": "Antonio Vivaldi"
+      },
+      {
+        "intitule": "Quel genre musical est originaire de la Jamaïque?",
+        "choix": ["Reggae", "Jazz", "Blues", "Country"],
+        "reponse": "Reggae"
+      },
+      {
+        "intitule": "Quel artiste est associé à la chanson 'Purple Rain'?",
+        "choix": ["David Bowie", "Prince", "Elton John", "Bruce Springsteen"],
+        "reponse": "Prince"
+      },
+      {
+        "intitule": "Quelle chanteuse a sorti un album intitulé '21'?",
+        "choix": ["Adele", "Beyoncé", "Taylor Swift", "Alicia Keys"],
+        "reponse": "Adele"
+      },
+      {
+        "intitule": "Quel groupe a chanté 'Bohemian Rhapsody'?",
+        "choix": ["The Who", "Queen", "The Rolling Stones", "The Beatles"],
+        "reponse": "Queen"
+      },
+      {
+        "intitule": "Quel instrument est associé à Benny Goodman?",
+        "choix": ["Trombone", "Saxophone", "Clarinette", "Flûte"],
+        "reponse": "Clarinette"
+      },
+      {
+        "intitule": "Quelle chanson des Beatles est basée sur une lettre d'Albert Einstein à son fils?",
+        "choix": ["Hey Jude", "Let It Be", "Lucy in the Sky with Diamonds", "Blackbird"],
+        "reponse": "Let It Be"
+      },
+      {
+        "intitule": "Quel artiste est connu pour son alter ego Ziggy Stardust?",
+        "choix": ["Mick Jagger", "David Bowie", "Rod Stewart", "Bob Dylan"],
+        "reponse": "David Bowie"
+      },
+      {
+        "intitule": "Quel groupe est associé à la chanson 'Stairway to Heaven'?",
+        "choix": ["Led Zeppelin", "Deep Purple", "Black Sabbath", "AC/DC"],
+        "reponse": "Led Zeppelin"
+      },
+      {
+        "intitule": "Quel genre musical est associé à New Orleans?",
+        "choix": ["Jazz", "Rock", "Hip-hop", "Techno"],
+        "reponse": "Jazz"
+      },
+      {
+        "intitule": "Qui a chanté 'Like a Virgin'?",
+        "choix": ["Whitney Houston", "Madonna", "Cyndi Lauper", "Janet Jackson"],
+        "reponse": "Madonna"
+      },
+      {
+        "intitule": "Quel groupe a enregistré l'album 'Back in Black'?",
+        "choix": ["Guns N' Roses", "AC/DC", "Metallica", "Nirvana"],
+        "reponse": "AC/DC"
+      },
+      {
+        "intitule": "Quel artiste est associé à la chanson 'Imagine'?",
+        "choix": ["Paul McCartney", "John Lennon", "George Harrison", "Ringo Starr"],
+        "reponse": "John Lennon"
+      },
+      {
+        "intitule": "Quel groupe a chanté 'Another Brick in the Wall'?",
+        "choix": ["The Who", "Pink Floyd", "The Rolling Stones", "The Doors"],
+        "reponse": "Pink Floyd"
+      },
+      {
+        "intitule": "Quel artiste est surnommé 'The Boss'?",
+        "choix": ["Bruce Springsteen", "Bob Dylan", "Eric Clapton", "Tom Petty"],
+        "reponse": "Bruce Springsteen"
+      },
+      {
+        "intitule": "Quelle chanteuse est associée à la chanson 'Single Ladies'?",
+        "choix": ["Beyoncé", "Rihanna", "Shakira", "Alicia Keys"],
+        "reponse": "Beyoncé"
+      },
+      {
+        "intitule": "Quel groupe est associé à l'album 'Nevermind'?",
+        "choix": ["Pearl Jam", "Nirvana", "Red Hot Chili Peppers", "Soundgarden"],
+        "reponse": "Nirvana"
+      },
+      {
+        "intitule": "Qui a composé l'opéra 'Carmen'?",
+        "choix": ["Richard Wagner", "Giuseppe Verdi", "Georges Bizet", "Ludwig van Beethoven"],
+        "reponse": "Georges Bizet"
+      },
+      {
+        "intitule": "Quel artiste est associé à la chanson 'Billie Jean'?",
+        "choix": ["Prince", "Michael Jackson", "Stevie Wonder", "Lionel Richie"],
+        "reponse": "Michael Jackson"
+      },
+      {
+        "intitule": "Quel groupe a chanté 'With or Without You'?",
+        "choix": ["Coldplay", "U2", "REM", "Radiohead"],
+        "reponse": "U2"
+      },
+      {
+        "intitule": "Quel artiste est surnommé 'The Piano Man'?",
+        "choix": ["Elton John", "Billy Joel", "Ray Charles", "Stevie Wonder"],
+        "reponse": "Billy Joel"
+      },
+      {
+        "intitule": "Quelle chanteuse est associée à la chanson 'I Will Always Love You'?",
+        "choix": ["Mariah Carey", "Whitney Houston", "Celine Dion", "Aretha Franklin"],
+        "reponse": "Whitney Houston"
+      },
+      {
+        "intitule": "Quel groupe a enregistré l'album 'Rumours'?",
+        "choix": ["Eagles", "Fleetwood Mac", "The Beatles", "The Rolling Stones"],
+        "reponse": "Fleetwood Mac"
+      },
+      {
+        "intitule": "Quel artiste est associé à la chanson 'What's Going On'?",
+        "choix": ["Marvin Gaye", "Otis Redding", "Sam Cooke", "James Brown"],
+        "reponse": "Marvin Gaye"
+      }
+    ]
+  }
+  

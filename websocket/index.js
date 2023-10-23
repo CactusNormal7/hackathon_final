@@ -7,9 +7,11 @@ const { getCurrentUser, userJoin, userLeave, getRoomUsers } = require("./users")
 const { generateUniqueRandomNumbers } = require('./utils')
 
 
+
 app.use(cors())
 
 const server = http.createServer(app)
+const roomSettings = {};
 
 const io = new Server(server, {
     cors: {
@@ -29,6 +31,9 @@ io.on("connection", (socket) => {
         //send all users infos
         io.to(user.room).emit('users_infos', { room: user.room, users: getRoomUsers(user.room) })
         console.log(getRoomUsers(user.room));
+        if (roomSettings[data.room]) {
+            socket.emit('settings_updated', roomSettings[data.room]);
+        }
     })
 
     socket.on('answer_message', (data) => {
@@ -41,7 +46,7 @@ io.on("connection", (socket) => {
         const user = getCurrentUser(socket.id)
         const da = await fetch('https://hackathon-api-fiq7.onrender.com/api/getall')
         const songs = await da.json()
-        let rdnb = generateUniqueRandomNumbers(5, 1, 30)
+        let rdnb = generateUniqueRandomNumbers(20, 1, 30)
         let songs_to_send = []
         for (let i = 0; i < rdnb.length; i++) {
             songs_to_send.push(songs[rdnb[i]])
@@ -69,7 +74,19 @@ io.on("connection", (socket) => {
             io.to(user.room).emit('users_infos', { room: user.room, users: getRoomUsers(user.room) })
         }
     })
+
+    socket.on('update_settings', (data) => {
+    const user = getCurrentUser(socket.id);
+    if (!user) return;
+    console.log("Received settings on server:", data);
+    roomSettings[user.room] = data;    
+    io.to(user.room).emit('settings_updated', data);
+});
+
+    
 })
+
+
 
 
 
