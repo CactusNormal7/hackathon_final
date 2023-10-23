@@ -33,11 +33,15 @@ const Lobby = () => {
     const [i, setI] = useState(0)
     const [gameOver, setGameOver] = useState(false);
     const [sortedUsers, setSortedUsers] = useState([]);
-    const [gameMode, setGameMode] = useState("fullmp3"); // par défaut
+    const [gameMode, setGameMode] = useState("mp3"); // par défaut
     const [showSettings, setShowSettings] = useState(false);
     const [maxPoints, setMaxPoints] = useState(2);
     const [timeLeft, setTimeLeft] = useState(15);
     const [songDuration, setSongDuration] = useState(15); // durée par défaut
+    const [qcmQuestion, setQcmQuestion] = useState("");
+    const [qcmChoices, setQcmChoices] = useState([]);
+    const [qcmAnswer, setQcmAnswer] = useState("");
+    const [currentQcmIndex, setCurrentQcmIndex] = useState(0);
 
     
 
@@ -54,6 +58,11 @@ const Lobby = () => {
     let score = 0
     let alsco = []
 
+    const resetUserColors = () => {
+        allUsers.forEach(user => {
+            document.querySelector(`.${user.username}`).style.backgroundColor = "gray";
+        });
+    }
 
     const onStart = () => {
         socketio.emit("on_start")
@@ -63,18 +72,30 @@ const Lobby = () => {
         return Math.floor(Math.random() * 61); 
     }
 
+    const gameLoopQCM = (data) => {
+        if (currentQcmIndex < data.length) {
+            setQcmQuestion(data[currentQcmIndex].intitule);
+            setQcmChoices(data[currentQcmIndex].choix);
+            setQcmAnswer(data[currentQcmIndex].reponse);
+        } else {
+            console.log("QCM terminé !");
+            // Vous pouvez ajouter une logique pour gérer la fin du QCM ici
+        }
+    }
+
 
     const gameLoop = (data) => {
         setSongsToGuess(data)
         console.log(data);
         let i = 0
         let timerInterval;
-        let answereed = false
-        
+        // let answereed = false
+        let playersAnswered = [];
         const nextIteration = () => {
+            resetUserColors();
             const highestScore = Math.max(...alsco.map(user => user.score));
             const startVideo= randomNumber();
-            answereed = false
+            // answereed = false
 
             if (highestScore >= maxPoints) {
                 console.log("Game Over!");
@@ -126,11 +147,11 @@ const Lobby = () => {
             
         }
         socketio.on('answer_message_received', (values) => {
-            if (!answereed) {
+            if (!playersAnswered.includes(values.username)) {
                 if (values.message === data[i - 1].title) {
                     console.log("true");
                     document.querySelector(`.${values.username}`).style.backgroundColor = "green";
-                    answereed = true;
+                    playersAnswered.push(values.username);
                     
                     const index = alsco.findIndex((object) => object.username === values.username);
                     
@@ -152,7 +173,7 @@ const Lobby = () => {
                     console.log("false");
                 }
             } else {
-                console.log("already answered");
+                console.log(values.username + " has already answered");
             }
         });        
         
@@ -188,9 +209,14 @@ const Lobby = () => {
         
 
         socketio.on('game_started', (data) => {
-            setIsGameStarted(true)
-            gameLoop(data);
-        })
+            setIsGameStarted(true);
+            
+            if (gameMode === "qcm") {
+                gameLoopQCM(data);
+            } else if (gameMode == "mp3") {
+                gameLoop(data);
+            }
+        });
 
         socketio.on('send_score', (d) => {
             setAllScore(allScore => ({ ...allScore, ...{ [d.username]: d.score } }))

@@ -43,21 +43,34 @@ io.on("connection", (socket) => {
     })
 
     socket.on("on_start", async () => {
-        const user = getCurrentUser(socket.id)
-        const da = await fetch('https://hackathon-api-fiq7.onrender.com/api/getall')
-        const songs = await da.json()
-        let rdnb = generateUniqueRandomNumbers(20, 1, 30)
-        let songs_to_send = []
-        for (let i = 0; i < rdnb.length; i++) {
-            songs_to_send.push(songs[rdnb[i]])
+        const user = getCurrentUser(socket.id);
+        const gameMode = roomSettings[user.room]?.gameMode || "mp3"; // default to mp3
+    
+        let dataToSend = [];
+    
+        switch (gameMode) {
+            case "mp3":
+                const da = await fetch('https://hackathon-api-fiq7.onrender.com/api/getall');
+                const songs = await da.json();
+                let rdnb = generateUniqueRandomNumbers(20, 1, 30);
+                for (let i = 0; i < rdnb.length; i++) {
+                    dataToSend.push(songs[rdnb[i]]);
+                }
+                break;
+            case "qcm":
+                dataToSend = qcmData.questions; // Utilisez directement les données QCM
+                break;
+            // ... handle other game modes
         }
-        io.to(user.room).emit('game_started', songs_to_send)
-    })
+    
+        io.to(user.room).emit('game_started', dataToSend);
+    });
+    
 
     socket.on('chat_message', (data) => {
         const user = getCurrentUser(socket.id)
 
-        io.to(user.room).emit('chat_message_received', { user: user.username, message: data.message })
+        io.to(user.room).emit('chat_message_received', { user: usear.username, message: data.message })
     })
 
     socket.on("good_answer", (d) => {
