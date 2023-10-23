@@ -9,7 +9,7 @@
 
 ### Description
 
-Ce projet a été réalisé dans le cadre du hackathon ynov dont le thème est la musique . Nous avons décidé de créer un quizz musical nommé QuizzTune sous format application web.
+Ce projet a été réalisé dans le cadre du Hackathon Ynov dont le thème est la musique. Nous avons décidé de créer un quiz musical nommé <b>QuizTune</b> sous format application web.
 
 ### Pré-requis
 
@@ -26,10 +26,10 @@ Installer NodeJs et npm
 
 ouvrez 2 terminales 
 
-Allez dans le dossier websocket 
+Allez dans le dossier websocket :
 -> node index.js
 
-Puis dans l'autre terminal , allez dans le dossier client 
+Puis dans l'autre terminal, allez dans le dossier client  :
 -> npm start 
 
 
@@ -38,7 +38,7 @@ Puis dans l'autre terminal , allez dans le dossier client
 Notre projet a les fonctionnalités suivantes :
 API : 
 
-On a héberger notre propre api, voici le lien ci-dessous :
+On a hébergé notre propre API, voici le lien ci-dessous :
 https://hackathon-api-fiq7.onrender.com
 
 * /api/getall : Récupère tous les musiques dans l'api.
@@ -48,17 +48,17 @@ https://hackathon-api-fiq7.onrender.com
 
 WebSocket : 
  
-* Principalement pour le multijoueur , l'envoie des données en temps réel. 
+* Principalement pour le multijoueur, l'envoi des données en temps réel. 
 
 Client : 
 
-* / : HomePage où tu peux saisir ton pseudo et le nom de la room
-* /lobby : Page du jeu où il y a un tchat entre joueur , des paramètres , les musiques à deviner 
+* / : HomePage où vous pouvez saisir votre pseudo et le nom de la room
+* /lobby : Page du jeu où il y a un chat entre joueurs, des paramètres, les musiques à deviner 
 
 Fabriqué avec
 * Javascript - Langage de programmation
 * React.JS - Framework JS
-* MongoDB - Base de donnée
+* MongoDB - Base de données
 
 ### Auteurs
 
